@@ -46,7 +46,7 @@ namespace numComplex{
     }
 
     //Operacao de Subtracao
-    void Adicao(){
+    void Subtracao(){
       double subtracaoR = pReal01 + pReal02;
       double subtracaoI = pImaginario01 + pImaginario02;
 
@@ -74,23 +74,23 @@ namespace numComplex{
 
       if(pReal02 != 0 && pImaginario02 != 0){
         double DivR = (pReal01 * pReal02 + pImaginario01 * pImaginario02) / (pow(pReal02,2) + pow(pImaginario02,2));
-        double DivR = (pReal02 * pImaginario01 - pImaginario02 * pReal01) / (pow(pReal02,2) + pow(pImaginario02,2));
+        double DivI = (pReal02 * pImaginario01 - pImaginario02 * pReal01) / (pow(pReal02,2) + pow(pImaginario02,2));
 
         if((pReal01 * pImaginario02 + pImaginario01 * pReal02) >= 0){
-          cout <<"\n Divisao = " << multR << " + " << multI << "j";
+          cout <<"\n Divisao = " << DivR << " + " << DivI << "j";
         }else{
-          cout <<"\n Divisao = " << multR << " - " << multI*-1 << "j";
+          cout <<"\n Divisao = " << DivR << " - " << DivI* -1 << "j";
         }
       }else{
         cout<< CYN <<"\n IMPOSSIVEL DIVIDIR POR ZERO! ";
       }
     }
-
+    
     //Operacao Modulo
     void Modulo(){
-      double cModulo = sqrt((pow(pReal01,2) + pow(pImaginario01,2));
-      double cAngu = atan(pImaginario01/pReal01) * 180 / 3.14159265;
-      cout <<"\n Modulo = " << cModulo << " < " << multI*-1 << " Graus";
+      double cModulo = sqrt( pow(pReal01,2) + pow(pImaginario01,2));
+      double cAngu = atan(pImaginario01 / pReal01) * 180 / 3.14159265;
+      cout <<"\n Modulo = " << cModulo << " < " << cAngu * -1 << " Graus";
     }
   };
 }

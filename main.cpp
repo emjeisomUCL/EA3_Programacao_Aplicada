@@ -53,6 +53,8 @@ int main()
     calc.verificaLeitura();
 
 
+
+
     cout<< "\n\nInforme o caractere da operação que deseja realizar ou digite (s) para sair...." <<endl;
     cout<< "\t + p/ Adicao" <<endl;
     cout<< "\t - p/ Subtracao" <<endl;
