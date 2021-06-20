@@ -23,7 +23,13 @@ namespace numComplex{
       pImaginario02 = iNum2;
     }
 
-    
+    //Verifica se leitura esta sendo feita
+    void verificaLeitura(){
+      cout<<"\nNum Real01......: " <<pReal01<<endl;
+      cout<<"Num Imaginario01: " <<pImaginario01 <<endl;
+      cout<<"Num Real02......: " <<pReal02<<endl;
+      cout<<"Num Imaginario02: " <<pImaginario02<<endl;
+    }
 
 
   };

@@ -29,7 +29,39 @@ int main()
   cout<< "\t Operacao: ";
   cin>>op;
 
+  //Operaçoes iram ocorrer quantas vezes o usuario quiser, entao sera feito um laco de repeticao
+  while(op != 's' && op != 'S'){
 
+    if(op != '|'){
+      cout<<"\nComponente real de num01: ";
+      cin>>nReal01;
+      cout<<"Componente imaginaria de num01: ";
+      cin>>nImag01;
+      cout<<"Componente real de num02: ";
+      cin>>nReal02;
+      cout<<"Componente imaginaria de num01: ";
+      cin>>nImag02;
+    }else{
+      cout<<"\nComponente real de num01: ";
+      cin>>nReal01;
+      cout<<"Componente imaginaria de num01: ";
+      cin>>nImag01;
+    }
+
+    calc.enterNumber(nReal01, nImag01, nReal02, nImag02);
+
+    calc.verificaLeitura();
+
+
+    cout<< "\n\nInforme o caractere da operação que deseja realizar ou digite (s) para sair...." <<endl;
+    cout<< "\t + p/ Adicao" <<endl;
+    cout<< "\t - p/ Subtracao" <<endl;
+    cout<< "\t * p/ Multiplicacao" <<endl;
+    cout<< "\t / p/ Divisao" <<endl;
+    cout<< "\t | p/ Modulo" <<endl;
+    cout<< "\t Operacao: ";
+    cin>>op;
+  }
 
   cout<< RED <<"\n\nFIM DA OPERACAO";
   cout<<endl<<endl;
