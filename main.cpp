@@ -6,7 +6,8 @@
 #include <iostream>
 #include "tComplexos.h"
 
-#define RED "\e[0;31m"
+#define GRN "\e[0;32m"
+#define NC "\e[0m"
 
 using namespace std;
 using namespace numComplex;
@@ -50,7 +51,7 @@ int main()
 
     calc.enterNumber(nReal01, nImag01, nReal02, nImag02);
 
-    calc.verificaLeitura();
+    calc.verificaLeitura(op);
 
     switch(op){
       case '+':
@@ -66,13 +67,14 @@ int main()
         calc.Divisao();
       break;
       case '|':
-        calc.Divisao();
+        calc.Modulo();
       break;
       default:
         cout<<"OPCAO INVALIDA";
       break;
     }
 
+    
 
     cout<< "\n\nInforme o caractere da operação que deseja realizar ou digite (s) para sair...." <<endl;
     cout<< "\t + p/ Adicao" <<endl;
@@ -84,7 +86,7 @@ int main()
     cin>>op;
   }
 
-  cout<< RED <<"\n\nFIM DA OPERACAO";
+  cout<< GRN <<"\n\nFIM DA OPERACAO" << NC ;
   cout<<endl<<endl;
   return 0;
 }

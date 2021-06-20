@@ -1,7 +1,8 @@
 //Criação de biblioteca externa
 #include <math.h>
 
-#define CYN "\e[0;36m"
+#define REDB "\e[41m"
+#define NC "\e[0m"
 
 using namespace std;
 
@@ -26,11 +27,35 @@ namespace numComplex{
     }
 
     //Verifica se leitura esta sendo feita
-    void verificaLeitura(){
-      cout<<"\nNum Real01......: " <<pReal01<<endl;
-      cout<<"Num Imaginario01: " <<pImaginario01 <<endl;
-      cout<<"Num Real02......: " <<pReal02<<endl;
-      cout<<"Num Imaginario02: " <<pImaginario02<<endl;
+    void verificaLeitura(char op){
+
+      cout<<"\n\nOperacao: ";
+
+      if(op != '|'){
+
+        if(pImaginario01 >= 0){
+          cout<<"\n ("<< pReal01 << " + " << pImaginario01 << "j)";
+        }else{
+          cout<<"\n ("<< pReal01 << " - " << pImaginario01 << "j)";
+        }
+
+        cout<<" "<<op <<" ";
+
+        if(pImaginario01 >= 0){
+          cout<<"("<< pReal02 << " + " << pImaginario02 << "j) = ";
+        }else{
+          cout<<"("<< pReal02 << " - " << pImaginario02 << "j) = \n\n";
+        }
+
+      }else{
+
+        if(pImaginario01 >= 0){
+          cout<<"\n |"<< pReal01 << " + " << pImaginario01 << "j| = ";
+        }else{
+          cout<<"\n |"<< pReal01 << " - " << pImaginario01 << "j| = ";
+        }
+
+      }
     }
 
     //Operacao de ADICAO
@@ -39,9 +64,9 @@ namespace numComplex{
       double adicaoI = pImaginario01 + pImaginario02;
 
       if((pImaginario01 + pImaginario02) >= 0){
-        cout <<"\n Adicao = " << adicaoR << " + " << adicaoI << "j";
+        cout <<adicaoR << " + " << adicaoI << "j";
       }else{
-        cout <<"\n Adicao = " << adicaoR << " - " << adicaoI*-1 << "j";
+        cout <<adicaoR << " - " << adicaoI*-1 << "j";
       }
     }
 
@@ -51,38 +76,42 @@ namespace numComplex{
       double subtracaoI = pImaginario01 + pImaginario02;
 
       if((pImaginario01 + pImaginario02) >= 0){
-        cout <<"\n Subtracao = " << subtracaoR << " + " << subtracaoI << "j";
+        cout <<subtracaoR << " + " << subtracaoI << "j";
       }else{
-        cout <<"\n Subtracao = " << subtracaoR << " - " << subtracaoI*-1 << "j";
+        cout <<subtracaoR << " - " << subtracaoI*-1 << "j";
       }
     }
 
-    //Operacao de Multiplicacao
+    // Operacao de Multiplicacao
+    // Para operações de Multiplicacao e Divisao foi usado como referencia o material do site https://www.todamateria.com.br/numeros-complexos/
     void Multiplicacao(){
       double multR = pReal01 * pReal02 - pImaginario01 * pImaginario02;
       double multI = pReal01 * pImaginario02 + pImaginario01 * pReal02;
 
       if((pReal01 * pImaginario02 + pImaginario01 * pReal02) >= 0){
-        cout <<"\n Multiplicacao = " << multR << " + " << multI << "j";
+        cout <<multR << " + " << multI << "j";
       }else{
-        cout <<"\n Multiplicacao = " << multR << " - " << multI*-1 << "j";
+        cout << multR << " - " << multI*-1 << "j";
       }
     }
 
     //Operacao de Divisao
+    // Para operações de Multiplicacao e Divisao foi usado como referencia o material do site https://www.todamateria.com.br/numeros-complexos/
     void Divisao(){
 
-      if(pReal02 != 0 && pImaginario02 != 0){
+      if(pReal02 == 0 && pImaginario02 == 0){
+        cout<< REDB <<"\n IMPOSSIVEL DIVIDIR POR ZERO! " << NC;
+      }else{
+
         double DivR = (pReal01 * pReal02 + pImaginario01 * pImaginario02) / (pow(pReal02,2) + pow(pImaginario02,2));
         double DivI = (pReal02 * pImaginario01 - pImaginario02 * pReal01) / (pow(pReal02,2) + pow(pImaginario02,2));
 
         if((pReal01 * pImaginario02 + pImaginario01 * pReal02) >= 0){
-          cout <<"\n Divisao = " << DivR << " + " << DivI << "j";
+          cout <<DivR << " + " << DivI << "j";
         }else{
-          cout <<"\n Divisao = " << DivR << " - " << DivI* -1 << "j";
+          cout <<DivR << " - " << DivI* -1 << "j";
         }
-      }else{
-        cout<< CYN <<"\n IMPOSSIVEL DIVIDIR POR ZERO! ";
+
       }
     }
     
@@ -90,7 +119,7 @@ namespace numComplex{
     void Modulo(){
       double cModulo = sqrt( pow(pReal01,2) + pow(pImaginario01,2));
       double cAngu = atan(pImaginario01 / pReal01) * 180 / 3.14159265;
-      cout <<"\n Modulo = " << cModulo << " < " << cAngu * -1 << " Graus";
+      cout <<cModulo << " < " << cAngu * -1 << " Graus";
     }
   };
 }
