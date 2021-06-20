@@ -1,6 +1,8 @@
 //Criação de biblioteca externa
 #include <math.h>
 
+#define CYN "\e[0;36m"
+
 using namespace std;
 
 // Fiz o uso de namespace pois esta em um exemplo na documentação da Microsoft 
@@ -65,7 +67,23 @@ namespace numComplex{
       }else{
         cout <<"\n Multiplicacao = " << multR << " - " << multI*-1 << "j";
       }
+    }
 
+    //Operacao de Divisao
+    void Divisao(){
+
+      if(pReal02 != 0 && pImaginario02 != 0){
+        double DivR = (pReal01 * pReal02 + pImaginario01 * pImaginario02) / (pow(pReal02,2) + pow(pImaginario02,2));
+        double DivR = (pReal02 * pImaginario01 - pImaginario02 * pReal01) / (pow(pReal02,2) + pow(pImaginario02,2));
+
+        if((pReal01 * pImaginario02 + pImaginario01 * pReal02) >= 0){
+          cout <<"\n Divisao = " << multR << " + " << multI << "j";
+        }else{
+          cout <<"\n Divisao = " << multR << " - " << multI*-1 << "j";
+        }
+      }else{
+        cout<< CYN <<"\n IMPOSSIVEL DIVIDIR POR ZERO! ";
+      }
     }
 
   };
