@@ -1,5 +1,6 @@
 //Criação de biblioteca externa
 #include <math.h>
+#include <iostream>
 
 #define REDB "\e[41m"
 #define NC "\e[0m"
