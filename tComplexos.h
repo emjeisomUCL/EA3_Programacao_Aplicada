@@ -37,15 +37,15 @@ namespace numComplex{
         if(pImaginario01 >= 0){
           cout<<"\n ("<< pReal01 << " + " << pImaginario01 << "j)";
         }else{
-          cout<<"\n ("<< pReal01 << " - " << pImaginario01 << "j)";
+          cout<<"\n ("<< pReal01 << " - " << pImaginario01*-1 << "j)";
         }
 
-        cout<<" "<<op <<" ";
+        cout<<" "<< op <<" ";
 
         if(pImaginario01 >= 0){
           cout<<"("<< pReal02 << " + " << pImaginario02 << "j) = ";
         }else{
-          cout<<"("<< pReal02 << " - " << pImaginario02 << "j) = \n\n";
+          cout<<"("<< pReal02 << " - " << pImaginario02*-1 << "j) = \n\n";
         }
 
       }else{
@@ -53,7 +53,7 @@ namespace numComplex{
         if(pImaginario01 >= 0){
           cout<<"\n |"<< pReal01 << " + " << pImaginario01 << "j| = ";
         }else{
-          cout<<"\n |"<< pReal01 << " - " << pImaginario01 << "j| = ";
+          cout<<"\n |"<< pReal01 << " - " << pImaginario01*-1 << "j| = ";
         }
 
       }
@@ -73,10 +73,10 @@ namespace numComplex{
 
     //Operacao de Subtracao
     void Subtracao(){
-      double subtracaoR = pReal01 + pReal02;
-      double subtracaoI = pImaginario01 + pImaginario02;
+      double subtracaoR = pReal01 - pReal02;
+      double subtracaoI = pImaginario01 - pImaginario02;
 
-      if((pImaginario01 + pImaginario02) >= 0){
+      if((pImaginario01 - pImaginario02) >= 0){
         cout <<subtracaoR << " + " << subtracaoI << "j";
       }else{
         cout <<subtracaoR << " - " << subtracaoI*-1 << "j";
@@ -107,7 +107,7 @@ namespace numComplex{
         double DivR = (pReal01 * pReal02 + pImaginario01 * pImaginario02) / (pow(pReal02,2) + pow(pImaginario02,2));
         double DivI = (pReal02 * pImaginario01 - pImaginario02 * pReal01) / (pow(pReal02,2) + pow(pImaginario02,2));
 
-        if((pReal01 * pImaginario02 + pImaginario01 * pReal02) >= 0){
+        if(((pReal02 * pImaginario01 - pImaginario02 * pReal01) / (pow(pReal02,2) + pow(pImaginario02,2))) >= 0){
           cout <<DivR << " + " << DivI << "j";
         }else{
           cout <<DivR << " - " << DivI* -1 << "j";
@@ -120,7 +120,7 @@ namespace numComplex{
     void Modulo(){
       double cModulo = sqrt( pow(pReal01,2) + pow(pImaginario01,2));
       double cAngu = atan(pImaginario01 / pReal01) * 180 / 3.14159265;
-      cout <<cModulo << " < " << cAngu * -1 << " Graus";
+      cout <<cModulo << " < " << cAngu  << " Graus";
     }
   };
 }
