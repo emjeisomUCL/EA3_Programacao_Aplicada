@@ -43,6 +43,18 @@ namespace numComplex{
       }
     }
 
+    //Operacao de Subtracao
+    void Adicao(){
+      double subtracaoR = pReal01 + pReal02;
+      double subtracaoI = pImaginario01 + pImaginario02;
+
+      if((pImaginario01 + pImaginario02) >= 0){
+        cout <<"\n Adicao = " << subtracaoR << " + " << subtracaoI << "j";
+      }else{
+        cout <<"\n Adicao = " << subtracaoR << " - " << subtracaoI*-1 << "j";
+      }
+    }
+
 
   };
 }
