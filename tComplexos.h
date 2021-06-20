@@ -86,5 +86,11 @@ namespace numComplex{
       }
     }
 
+    //Operacao Modulo
+    void Modulo(){
+      double cModulo = sqrt((pow(pReal01,2) + pow(pImaginario01,2));
+      double cAngu = atan(pImaginario01/pReal01) * 180 / 3.14159265;
+      cout <<"\n Modulo = " << cModulo << " < " << multI*-1 << " Graus";
+    }
   };
 }
