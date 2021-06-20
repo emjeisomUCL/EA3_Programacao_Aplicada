@@ -31,6 +31,18 @@ namespace numComplex{
       cout<<"Num Imaginario02: " <<pImaginario02<<endl;
     }
 
+    //Operacao de ADICAO
+    void Adicao(){
+      double adicaoR = pReal01 + pReal02;
+      double adicaoI = pImaginario01 + pImaginario02;
+
+      if((pImaginario01 + pImaginario02) >= 0){
+        cout <<"\n Adicao = " << adicaoR << " + " << adicaoI << "j";
+      }else{
+        cout <<"\n Adicao = " << adicaoR << " - " << adicaoI*-1 << "j";
+      }
+    }
+
 
   };
 }
