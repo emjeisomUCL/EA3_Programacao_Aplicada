@@ -52,7 +52,26 @@ int main()
 
     calc.verificaLeitura();
 
-
+    switch(op){
+      case '+':
+        calc.Adicao();
+      break;
+      case '-':
+        calc.Subtracao();
+      break;
+      case '*':
+        calc.Multiplicacao();
+      break;
+      case '/':
+        calc.Divisao();
+      break;
+      case '|':
+        calc.Divisao();
+      break;
+      default:
+        cout<<"OPCAO INVALIDA";
+      break;
+    }
 
 
     cout<< "\n\nInforme o caractere da operação que deseja realizar ou digite (s) para sair...." <<endl;
