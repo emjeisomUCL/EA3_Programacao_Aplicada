@@ -49,12 +49,24 @@ namespace numComplex{
       double subtracaoI = pImaginario01 + pImaginario02;
 
       if((pImaginario01 + pImaginario02) >= 0){
-        cout <<"\n Adicao = " << subtracaoR << " + " << subtracaoI << "j";
+        cout <<"\n Subtracao = " << subtracaoR << " + " << subtracaoI << "j";
       }else{
-        cout <<"\n Adicao = " << subtracaoR << " - " << subtracaoI*-1 << "j";
+        cout <<"\n Subtracao = " << subtracaoR << " - " << subtracaoI*-1 << "j";
       }
     }
 
+    //Operacao de Multiplicacao
+    void Multiplicacao(){
+      double multR = pReal01 * pReal02 - pImaginario01 * pImaginario02;
+      double multI = pReal01 * pImaginario02 + pImaginario01 * pReal02;
+
+      if((pReal01 * pImaginario02 + pImaginario01 * pReal02) >= 0){
+        cout <<"\n Multiplicacao = " << multR << " + " << multI << "j";
+      }else{
+        cout <<"\n Multiplicacao = " << multR << " - " << multI*-1 << "j";
+      }
+
+    }
 
   };
 }
